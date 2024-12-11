@@ -41,3 +41,26 @@ Please enter a question:
 who earns the most
 [Response]: The country that earns the most is China.
 ```
+
+还支持进行表连接，并且将结果导出到`export.csv`中
+```
+(PandasAIDemo) append csvs
+append csvs/people.csv successfully!
+append csvs/area_by_country.csv successfully!
+append csvs/revenue_by_country.csv successfully!
+(PandasAIDemo) export
+Please enter a cmd to export a new table:
+Joining the people table with the country
+[Response]:       name  age        country  salary     area  revenue
+0    Alice   25  United States    5000  9833520     5000
+1      Bob   30  United States    6000  9833520     5000
+2  Charlie   35  United States    4500  9833520     5000
+3    David   40         Canada    2600  9984670     2500
+4    Emily   45          China   90000  9596961     7000
+5    Frank   50          Japan  100000   377972     4500
+6    Grace   35        Germany    4200   357022     4100
+7    Henry   30        Germany    4000   357022     4100
+8      Ivy   35          Spain    2700   505992     2100
+9     Jack   40          Spain    2100   505992     2100
+Exported to export.csv successfully
+```

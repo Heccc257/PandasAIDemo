@@ -78,6 +78,21 @@ class myAgent():
         return response
     
 if __name__ == "__main__":
+    sales_by_country = pd.DataFrame({
+        "country": ["United States", "United Kingdom", "France", "Germany", "Italy", "Spain", "Canada", "Australia", "Japan", "China"],
+        "revenue": [5000, 3200, 2900, 4100, 2300, 2100, 2500, 2600, 4500, 7000]
+    })
+
+    # By default, unless you choose a different LLM, it will use BambooLLM.
+    # You can get your free API key signing up at https://pandabi.ai (you can also configure it in your .env file)
+    os.environ["PANDASAI_API_KEY"] = "$2a$10$KxglpkIOgEH2MfC.WiSlQuz4x7UiL7z0bDpZSczwQFSnxfj/I2wei"
+
+    agent = Agent(sales_by_country)
+    agent.chat(
+        "Plot the histogram of countries showing for each one the gd. Use different colors for each bar",
+    )
+    exit(0)
+    
     agent = myAgent()
     file_path_csv = 'csvs/revenue_by_country.csv'
     revenue_by_country = pd.read_csv(file_path_csv)
